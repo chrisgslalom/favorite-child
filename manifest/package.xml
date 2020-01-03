@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>WO_CriticalPathTaskController</members>
+        <members>FetchTaskList</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>WorkOrder.Critical_Path_Activity__c</members>
+        <members>Activity.Responsible_Party__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>TaskTrigger</members>
+        <name>ApexTrigger</name>
+    </types>
+    <types>
+        <members>WO_CriticalPathTask</members>
+        <members>BuilderWO_CriticalPathDisplay</members>
+        <members>BuilderWO_eachTask</members>
+        <members>BuilderWO_TaskList</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+    <version>47.0</version>
+</Package>

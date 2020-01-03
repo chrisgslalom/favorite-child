@@ -1,0 +1,22 @@
+<aura:component implements="force:lightningQuickAction,force:hasRecordId" controller="WO_CriticalPathTaskController">
+    <aura:attribute name="criticalPathTask" type="Task"/>
+    <aura:attribute name="currentTask" type="Task"/>
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <b>You are changing the critical path!</b><br/><br/>
+    <div class="slds-tile__detail" style="width:100%;">
+        <dl class="slds-list_horizontal">
+            <dt class="slds-item_label slds-text-color_strong" style="width:50%;" title="Critical Task">Current Critical Path:</dt>
+            <dd class="slds-item_detail" title="Description for first label">{!v.criticalPathTask.Subject}<br/></dd>    
+        </dl>
+    </div>
+
+    <div class="slds-tile__detail" style="width:100%;">
+        <dl class="slds-list_horizontal">
+            <dt class="slds-item_label slds-text-color_strong" style="font-weight:bold;width:50%;" title="Critical Task">NEW Critical Path:</dt>
+            <dd class="slds-item_detail" title="Description for first label">{!v.currentTask.Subject}</dd>    
+        </dl>
+    </div>
+    <br/><br/>
+	<ui:button label="Confirm" press="{!c.setCriticalPath}"/>
+</aura:component>

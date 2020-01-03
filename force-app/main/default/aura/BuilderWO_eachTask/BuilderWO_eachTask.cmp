@@ -1,0 +1,23 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+	<aura:attribute name="subject" type="String" />
+    <aura:attribute name="responsibleParty" type="String" />
+    <aura:attribute name="completedFlag" type="Boolean" />
+    
+    <div class="demo-only" style="width: 30rem;">
+    <article class="slds-tile">
+        <div class="slds-tile__detail">
+            <dl class="slds-list_horizontal slds-wrap" style="border-bottom:1px solid black;">
+                <dt class="slds-item_label slds-text-color_weak slds-truncate" title="First Label">Completed</dt>
+                <dd class="slds-item_detail slds-truncate" title="Description for first label">{!v.completedFlag}</dd>
+                <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Second Label">Subject:</dt>
+                <dd class="slds-item_detail slds-truncate" title="Description for second label">{!v.subject}</dd>
+                <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Third Label">Responsible Party:</dt>
+                <dd class="slds-item_detail slds-truncate" title="Description for Third label">{!v.responsibleParty}</dd>
+                <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Third Label">Due Date:</dt>
+                <dd class="slds-item_detail slds-truncate" title="Description for Third label">{!v.ActivityDate}</dd>
+            </dl>
+    </div>
+    </article>
+
+  </div>
+</aura:component>

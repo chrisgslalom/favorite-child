@@ -1,0 +1,49 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" controller="FetchTaskList" access="global" >
+	<aura:attribute name="taskList" type="Task[]" />
+    <aura:attribute name="columnList" type="String[]" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />   
+    
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_striped">
+        <thead>
+            <tr class="slds-line-height_reset">
+                <th class="" scope="col">
+                	<div class="slds-truncate" title="Completed">Completed</div>
+                </th>
+                <th class="" scope="col">
+                	<div class="slds-truncate" title="Subject">Subject</div>
+                </th>
+                <th class="" scope="col">
+                	<div class="slds-truncate" title="Responsible Party">Responsible Party</div>
+                </th>
+                <th class="" scope="col">
+                	<div class="slds-truncate" title="Due Date">Due Date</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+        <aura:iteration items="{!v.taskList}" var="item">
+             <tr class="slds-hint-parent">
+                <th data-label="Completed" scope="row">
+                    <div class="slds-truncate" title="{!item.IsClosed}">
+                        <input type="checkbox" checked="{!item.IsClosed}" disabled="true"/>
+                    </div>
+                </th>
+                <td data-label="Subject">
+                    <div class="slds-truncate" title="{!item.Subject}">{!item.Subject}</div>
+                </td>
+                <td data-label="Assigned To">
+                    <div class="slds-truncate" title="{!item.Responsible_Party__c}">{!item.Responsible_Party__c}</div>
+                </td>
+                <td data-label="Due Date">
+                    <div class="slds-truncate" title="{!item.ActivityDate}">{!item.ActivityDate}</div>
+                </td>
+                <!--<td data-label="Contact">
+                    <div class="slds-truncate" title="jrogers@cloudhub.com">
+                    <a href="javascript:void(0);" tabindex="-1">jrogers@cloudhub.com</a>
+                    </div>
+                </td>-->
+            </tr>
+        </aura:iteration>
+        </tbody>
+	</table>
+</aura:component>
